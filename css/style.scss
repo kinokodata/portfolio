@@ -1,0 +1,696 @@
+/* You can add global styles, and also import other style files here */
+@import "hamburger.scss";
+@import "scrollDown.scss";
+@import "pageTopButton.scss";
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;900&display=swap');
+
+$cream: #fffdce;
+$bamboo: #6cc0a2;
+$rose: #e35768;
+$pink: #f3b2c5;
+$indigo: #304a67;
+$cochineal:#bd427b;
+
+$pc-min: 1025px;
+$tb-max: 1024px;
+$tb-min: 600px;
+$sp-max: 599px;
+
+@mixin resp-top($pc-t: 0px, $tb-t: 0px, $sp-t: 0px) {
+  @media screen and (min-width: $pc-min){top: $pc-t;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){top: $tb-t;}
+  @media screen and (max-width: $sp-max){top: $sp-t;}
+}
+@mixin resp-right($pc-r: 0px, $tb-r: 0px, $sp-r: 0px) {
+  @media screen and (min-width: $pc-min){right: $pc-r;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){right: $tb-r;}
+  @media screen and (max-width: $sp-max){right: $sp-r;}
+}
+@mixin resp-bottom($pc-b: 0px, $tb-b: 0px, $sp-b: 0px) {
+  @media screen and (min-width: $pc-min){bottom: $pc-b;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){bottom: $tb-b;}
+  @media screen and (max-width: $sp-max){bottom: $sp-b;}
+}
+@mixin resp-left($pc-l: 0px, $tb-l: 0px, $sp-l: 0px) {
+  @media screen and (min-width: $pc-min){left: $pc-l;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){left: $tb-l;}
+  @media screen and (max-width: $sp-max){left: $sp-l;}
+}
+
+
+@mixin resp-margin-top($pc-mt: 0px, $tb-mt: 0px, $sp-mt: 0px) {
+  @media screen and (min-width: $pc-min){margin-top: $pc-mt;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){margin-top: $tb-mt;}
+  @media screen and (max-width: $sp-max){margin-top: $sp-mt;}
+}
+@mixin resp-margin-right($pc-mr: 0px, $tb-mr: 0px, $sp-mr: 0px) {
+  @media screen and (min-width: $pc-min){margin-right: $pc-mr;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){margin-right: $tb-mr;}
+  @media screen and (max-width: $sp-max){margin-right: $sp-mr;}
+}
+@mixin resp-margin-bottom($pc-mb: 0px, $tb-mb: 0px, $sp-mb: 0px) {
+  @media screen and (min-width: $pc-min){margin-bottom: $pc-mb;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){margin-bottom: $tb-mb;}
+  @media screen and (max-width: $sp-max){margin-bottom: $sp-mb;}
+}
+@mixin resp-margin-left($pc-ml: 0px, $tb-ml: 0px, $sp-ml: 0px) {
+  @media screen and (min-width: $pc-min){margin-left: $pc-ml;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){margin-left: $tb-ml;}
+  @media screen and (max-width: $sp-max){margin-left: $sp-ml;}
+}
+
+@mixin resp-padding-top($pc-pt: 0px, $tb-pt: 0px, $sp-pt: 0px) {
+  @media screen and (min-width: $pc-min){padding-top: $pc-pt;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){padding-top: $tb-pt;}
+  @media screen and (max-width: $sp-max){padding-top: $sp-pt;}
+}
+@mixin resp-padding-right($pc-pr: 0px, $tb-pr: 0px, $sp-pr: 0px) {
+  @media screen and (min-width: $pc-min){padding-right: $pc-pr;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){padding-right: $tb-pr;}
+  @media screen and (max-width: $sp-max){margin-right: $sp-pr;}
+}
+@mixin resp-padding-bottom($pc-pb: 0px, $tb-pb: 0px, $sp-pb: 0px) {
+  @media screen and (min-width: $pc-min){padding-bottom: $pc-pb;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){padding-bottom: $tb-pb;}
+  @media screen and (max-width: $sp-max){padding-bottom: $sp-pb;}
+}
+@mixin resp-padding-left($pc-pl: 0px, $tb-pl: 0px, $sp-pl: 0px) {
+  @media screen and (min-width: $pc-min){margin-left: $pc-pl;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){margin-left: $tb-pl;}
+  @media screen and (max-width: $sp-max){margin-left: $sp-pl;}
+}
+@mixin resp-margin-top-bottom($pc-mtb, $tb-mtb, $sp-mtb) {
+  @media screen and (min-width: $pc-min){margin-top: $pc-mtb; margin-bottom: $pc-mtb;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){margin-top: $tb-mtb; margin-bottom: $tb-mtb;}
+  @media screen and (max-width: $sp-max){margin-top: $sp-mtb; margin-bottom: $sp-mtb;}
+}
+@mixin resp-padding-top-bottom($pc-mtb, $tb-mtb, $sp-mtb) {
+  @media screen and (min-width: $pc-min){padding-top: $pc-mtb; padding-bottom: $pc-mtb;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){padding-top: $tb-mtb; padding-bottom: $tb-mtb;}
+  @media screen and (max-width: $sp-max){padding-top: $sp-mtb; padding-bottom: $sp-mtb;}
+}
+
+@mixin resp-row-gap($pc-rg, $tb-rg, $sp-rg) {
+  @media screen and (min-width: $pc-min){row-gap: $pc-rg;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){row-gap: $tb-rg;}
+  @media screen and (max-width: $sp-max){row-gap: $sp-rg;}
+}
+@mixin resp-col-gap($pc-cg, $tb-cg, $sp-cg) {
+  @media screen and (min-width: $pc-min){column-gap: $pc-cg;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){column-gap: $tb-cg;}
+  @media screen and (max-width: $sp-max){column-gap: $sp-cg;}
+}
+
+
+@mixin resp-max-width($pc-max-width: 1000px, $tb-max-width: 580px, $sp-max-width: 275px) {
+  @media screen and (min-width: $pc-min){max-width: $pc-max-width;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){max-width: $tb-max-width;}
+  @media screen and (max-width: $sp-max){max-width: $sp-max-width;}
+}
+@mixin resp-width($pc-width: 1000px, $tb-width: 580px, $sp-width: 275px) {
+  @media screen and (min-width: $pc-min){width: $pc-width;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){width: $tb-width;}
+  @media screen and (max-width: $sp-max){width: $sp-width;}
+}
+@mixin resp-height($pc-height: 412px, $tb-height: 202px, $sp-height: 130px) {
+  @media screen and (min-width: $pc-min){height: $pc-height;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){height: $tb-height;}
+  @media screen and (max-width: $sp-max){height: $sp-height;}
+}
+@mixin resp-border-radius($pc-br, $tb-br, $sp-br) {
+  @media screen and (min-width: $pc-min){border-radius: $pc-br;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){border-radius: $tb-br;}
+  @media screen and (max-width: $sp-max){border-radius: $sp-br;}
+}
+@mixin resp-line-height($pc-line-height: 1.5, $tb-line-height: 1.5, $sp-line-height: 1.4375) {
+  @media screen and (min-width: $pc-min){font-size: $pc-line-height;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){font-size: $tb-line-height;}
+  @media screen and (max-width: $sp-max){font-size: $sp-line-height;}
+}
+@mixin resp-font-size($pc-font-size: 50px, $tb-font-size: 25px, $sp-font-size: 16px) {
+  @media screen and (min-width: $pc-min){font-size: $pc-font-size;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){font-size: $tb-font-size;}
+  @media screen and (max-width: $sp-max){font-size: $sp-font-size;}
+}
+
+@mixin flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin wrapper-fluid($bg-color) {
+  width: 100%;
+  background-color: $bg-color;
+}
+@mixin margin-top-bottom($mtb) {
+  margin-top: $mtb;
+  margin-bottom: $mtb;
+}
+@mixin padding-top-bottom($ptb) {
+  padding-top: $ptb;
+  padding-bottom: $ptb;
+}
+@mixin block-element-horizontal-center{
+  margin-right: auto;
+  margin-left: auto;
+}
+@mixin text-center-center {
+  text-align: center;
+  vertical-align: center;
+}
+@mixin no-margin-padding {
+  margin: 0;
+  padding: 0;
+}
+@mixin square($sq) {
+  width: $sq;
+  height: $sq;
+}
+@mixin bg-img($img-name:works-bg) {
+  background: {
+    image: url("img/#{$img-name}.png");
+    repeat: no-repeat;
+    position: top;
+    size: 100%;
+  }
+}
+
+html{
+  scroll-behavior: smooth;
+}
+body{
+  margin: 0;
+}
+header, section, footer{
+  margin: 0;
+  width: 100%;
+}
+h1, h2, h3, p, a, li, .th{
+  line-height: 1.4;
+  font-weight: 700;
+  color: $indigo;
+}
+@media screen and (min-width: $pc-min){
+  h1{
+    margin: 100px 0 40px;
+    font-size: 40px;
+  }
+  h2{
+    margin-bottom: 30px;
+    font-size: 30px;
+  }
+  h3{
+    margin: 40px 0 20px;
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: $tb-min) and (max-width: $tb-max){
+  h1{
+    font-size: 30px;
+    margin: 80px 0 35px;
+  }
+  h2{
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  h3{
+    font-size: 20px;
+    margin: 40px 0 20px;
+  }
+}
+@media screen and (max-width: $sp-max){
+  h1{
+    font-size: 25px;
+    margin: 50px 0 25px;
+  }
+  h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  h3{
+    font-size: 20px;
+    margin: 40px 0 20px;
+  }
+}
+
+h1, h2, h3, p, li, .th, .td, button {
+  font-family:  'M PLUS Rounded 1c', sans-serif;
+}
+
+/*---------- You can add styles of each sections here ----------*/
+header{
+  @include resp-padding-bottom(100px, 76px, 50px);
+  position: relative;
+  .fadeIn{
+    @include no-margin-padding;
+    width: 100%;
+    animation-name: fadeInAnime;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+    opacity:0;
+    .wrapper-bg{
+      margin: 0;
+      @include resp-padding-bottom(0px, 10px, 39px);
+      @include wrapper-fluid($cream);
+      .logo{
+        @include resp-margin-top(20px, 20px, 10px);
+        @include resp-margin-left(40px, 20px, 10px);
+        @include resp-max-width(100px, 100px, 60px);
+        @include resp-height(60px, 60px, 36px);
+      }
+      .wrapper{
+        @include resp-margin-top(70px, 24px, 34px);
+        @include block-element-horizontal-center;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        @include resp-max-width(1000px, 580px, 275px); /*tb、sp要確認→block-element-horizontal-centerではないかも*/
+        .fv{
+          margin: 0;
+          @include resp-max-width(400px, 200px, 130px);
+          @include resp-height(412px, 202px, 130px);
+        }
+        .copy{
+          @include no-margin-padding;
+          p{
+            margin: 0;
+            text-align: center;
+            @include resp-font-size(50px, 25px, 16px);
+            @include resp-line-height(2, 1.48, 1.4375);
+            span{
+              color: $cochineal;
+              &:nth-child(4){
+                @include resp-font-size(80px, 40px, 25px);
+                @media screen and (min-width: $pc-min){font-weight: 900;}
+              }
+            }
+            .br-sp{
+              @media screen and (min-width: $tb-min){display: none;}
+            }
+            &:last-child{
+              @include resp-margin-top(21px, 14px, 0);
+              margin-right: 0;
+              margin-bottom: 0;
+              margin-left: 0;
+              padding: 0;
+              color: $indigo;
+              opacity: 0.1;
+              @include resp-font-size(40px, 20px, 6px);
+            }
+          }
+        }
+      }
+    }
+    .bg-bottom{
+      margin: 0;
+      position: relative;
+      width: 100%;
+      height: calc(119 / 2251 *100vw);
+      @include bg-img(fv-bg1-bottom);
+    }
+    .greeting{
+      margin: 0 auto;
+      @include resp-max-width(1000px, 580px, 300px);
+      h1, p{
+        text-align: center;
+      }
+      p{
+        margin: 0;
+        @include resp-font-size(30px, 20px, 16px);
+        @media screen and (min-width: $tb-min){line-height: 1.5;}
+        @media screen and (max-width: $sp-max){line-height: calc(23 / 16);}
+        .br-sp{
+          @media screen and (min-width: $tb-min){display: none;}
+        }
+      }
+    }
+  }
+  @keyframes fadeInAnime{
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.navi{
+  position: absolute;
+  @include resp-top(36px, 35px, 18px);
+  @include resp-right(40px, 20px, 10px);
+  .pc-navi{
+    @media screen and (max-width: $tb-max){display: none;}
+    top: 0px;
+    right: 0px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    a{
+      font-size: 20px;
+      font-weight: 500;
+      color: $indigo;
+      text-decoration: none;
+    }
+  }
+  .hamburger{
+    @media screen and (min-width: $pc-min){display: none;}
+  } 
+}
+
+#works{
+  .bg-top{
+    @include no-margin-padding;
+    @media screen and (min-width: $pc-min){
+      height: calc(118 / 2847 *100vw);
+      @include bg-img(works-bg-top);
+    }
+    @media screen and (min-width: $tb-min) and (max-width: $tb-max){
+      height: calc(67 / 1601 *100vw);
+      @include bg-img(works-bg-tb-top);
+    }
+    @media screen and (max-width: $sp-max){
+      height: calc(16 / 375 *100vw);
+      @include bg-img(works-bg-sp-top);
+    }
+    transform: translateY(1px);
+  }
+  .bg-bottom{
+    margin:0;
+    @media screen and (min-width: $pc-min){
+      height: calc(114 / 2847 *100vw);
+      @include bg-img(works-bg-bottom);
+    }
+    @media screen and (min-width: $tb-min) and (max-width: $tb-max){
+      height: calc(65 / 1601 *100vw);
+      @include bg-img(works-bg-tb-bottom);
+    }
+    @media screen and (max-width: $sp-max){
+      height: calc(17 / 375 *100vw);
+      @include bg-img(works-bg-sp-bottom);
+    }
+    transform: translateY(-1px);
+  }
+  .wrapper-bg{
+    margin: 0;
+    @include resp-padding-top(42px, 48px, 31px);
+    @include resp-padding-bottom(45px, 59px, 32px);
+    background-color: $pink;
+    h1{
+      margin-top: 0 !important;
+      text-align: center;
+      color: white;
+    }
+    .wrapper{
+      margin: 0 auto;
+      @include resp-max-width(1000px, 654px, 300px);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      @include resp-row-gap(40px, 35px, 25px);
+      @include resp-col-gap(50px, 54px, 0);
+      .wrapper2{
+        display: flex;
+        width: 300px;
+        height: 480px;
+        article{
+          position: relative;
+          padding-right: 30px;/*img, h3, pをmax-widthじゃなくてwidthにすればここ2行はautoでもいいが、もうこのままにする。*/
+          padding-left: 30px;
+          @include wrapper-fluid(white);
+          height: 480px;
+          border-radius: 25px;
+          img{
+            margin-top: 40px;
+          }
+          img, h3, p{
+            max-width: 240px;
+          }
+          h3{
+            text-align: center;
+            span{
+              font-size: 16px;
+            }
+          }
+          p{
+            line-height: calc(23 / 16);
+          }
+          .buttonWrapper{
+            position: absolute;
+            left: 50%;
+            bottom: 38px;
+            transform: translate(-50%, 0%);
+            text-align: center;
+            button{
+              margin: 0 auto;
+              width: 156px;
+              height: 32px;
+              border: {
+                width: 0;
+                radius: 16px;
+              }
+              background-color: $cochineal;
+              box-shadow: 0 2px $pink;
+              cursor: pointer;
+              color: white;
+              text-align: center;
+              font-size: 16px;
+              &:hover{
+                box-shadow: none;
+                transform: translateY(2px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#service{
+  h1{
+    text-align: center;
+    color: $indigo;
+  }
+  article{
+    @include block-element-horizontal-center;
+    @include resp-margin-bottom(40px, 40px, 25px);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    @include resp-width(1000px, 580px, 275px);
+    @include resp-height(280px, 220px, 381px);
+    box-shadow: 5px 5px 6px #00000018;
+    .imgWrapper{
+      margin: 0;
+      @include flex-center-center;
+      @include resp-width(380px, 200px, 275px);
+      @include resp-height(280px, 220px, 180px);
+      background-color: $cream;
+      img{
+        @include resp-width(240px, 160px, 160px);
+        @include resp-height(180px, 120px, 120px);
+      }
+    }
+    .textWrapper{
+      @include no-margin-padding;
+      @include resp-width(620px, 380px, 275px);
+      @include resp-height(280px, 220px, 201px);
+      .textWrapper2{
+        @include resp-margin-top(70px, 40px, 20px);
+        @include resp-margin-left(60px, 20px, 10px);
+        @include resp-width(480px, 340px, 255px);
+        @include resp-height(210px, 180px, 181px);
+        @media screen and (max-width: $sp-max){
+          h2{
+            margin-top: 0;
+            @include resp-margin-bottom(30px, 30px, 10px);
+            text-align: center;
+          }
+          p{
+            @include no-margin-padding;
+            line-height: calc(23 / 16);
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#profile{
+  @include resp-margin-top(100px, 80px, 50px);
+  @include resp-margin-bottom(100px, 50px, 50px);
+  .wrapper{
+    margin: 0 auto;
+    @include resp-padding-top(100px, 50px, 50px);
+    @include resp-padding-bottom(100px, 50px, 50px);
+    @include resp-width(1000px, 100%, 100%);
+    background-color: $cream;
+    @media screen and (min-width: $pc-min){border-radius: 45px;}
+    .wrapper2{
+      margin: 0 auto;
+      @include resp-width(1000px, 560px, 275px);
+      text-align: center;
+      h1{
+        margin-top: 0;
+        @include resp-margin-bottom(40px, 25px, 25px);
+      }
+      img{
+        @include margin-top-bottom(0);
+        @include resp-width(300px, 300px, 200px);
+        @include resp-height(300px, 300px, 200px);
+        border-radius: 50%;
+      }
+      p{
+        @include resp-margin-top(40px, 40px, 39px);
+        @include resp-margin-bottom(30px, 30px, 20px);
+        @include resp-font-size(30px, 30px, 20px);
+      }
+      article{
+        margin: 0;
+        width: 100%;
+        p{
+          margin: 0;
+          line-height: calc(23 / 16);
+          font-size: 16px;
+          color: $indigo;
+        }
+      }
+    }
+  }
+  .wrapper.zoomin.is-animated {
+    animation: zoomIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  }
+
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+#about{
+  .bg-top{
+    margin:0;
+    @media screen and (min-width: $pc-min){
+      height: calc(97 / 2847 *100vw);
+      @include bg-img(about-bg-top);
+    }
+    @media screen and (min-width: $tb-min) and (max-width: $tb-max){
+      height: calc(67 / 1601 *100vw);
+      @include bg-img(about-bg-tb-top);
+    }
+    @media screen and (max-width: $sp-max){
+      height: calc(16 / 375 *100vw);
+      @include bg-img(about-bg-sp-top);
+    }
+    transform: translateY(1px);
+  }
+  .bg-bottom{
+    margin:0;
+    @media screen and (min-width: $pc-min){
+      height: calc(116 / 2847 *100vw);
+      @include bg-img(about-bg-bottom);
+    }
+    @media screen and (min-width: $tb-min) and (max-width: $tb-max){
+      height: calc(65 / 1601 *100vw);
+      @include bg-img(about-bg-tb-bottom);
+    }
+    @media screen and (max-width: $sp-max){
+      height: calc(16 / 375 *100vw);
+      @include bg-img(about-bg-sp-bottom);
+    }
+    transform: translateY(-1px);
+  }
+  .wrapper-bg{
+    margin: 0;
+    @include resp-padding-top(54px, 48px, 34px);
+    @include resp-padding-bottom(44px, 49px, 35px);
+    background-color: $pink;
+    text-align: center;
+    h1{
+      margin-top: 0;
+      color: white;
+    }
+    .table{
+      margin: 0 auto;
+      @include resp-max-width(800px, 600px, 275px);
+      .tr{
+        @include resp-margin-bottom(24px, 24px, 15px);
+        display: flex;
+        flex-wrap: nowrap;
+        @include resp-height(53px, 53px, 32px);
+        border-bottom: 2px white solid;
+        @media screen and (max-width: $sp-max){
+          &:nth-child(4){height: 55px;}
+        }
+        &:last-child{margin-bottom: 0;}
+        .th{
+          @include resp-padding-left(25px, 10px, 5px);
+          @include resp-width(265px, 190px, 115px);
+          text-align: start;
+          vertical-align: top;
+        }
+        .td{
+          padding-left: 0;
+          @include resp-width(535px, 410px, 160px);
+          text-align: start;
+          vertical-align: top;
+          font-weight: 500;
+          color: $indigo;
+        }
+      }
+    }
+  }
+}
+
+#contact{
+  text-align: center;
+  p{
+    margin-top: 0;
+    @include resp-margin-bottom(40px, 40px, 25px);
+    @include block-element-horizontal-center;
+    @media screen and (max-width: $sp-max){width: 275px;}
+    font-size: 16px;
+    line-height: calc(23 / 16);
+    .br-tb{
+      @media screen and (max-width: $sp-max){display: none;}
+    }
+  }
+  .buttonWrapper{
+    margin-top: 0;
+    @include block-element-horizontal-center;
+    @include resp-margin-bottom(100px, 80px, 50px);
+    @include resp-width(360px, 360px, 275px);
+    height: 82px;
+    button{
+      @include padding-top-bottom(30px);
+      width: 100%;
+      border-width: 0;
+      background-color: $cochineal;
+      color: white;
+      font-size: 16px;
+      @include text-center-center;
+    }
+  }
+}
+
+footer{
+  @include flex-center-center;
+  @include resp-height(95px, 95px, 65px);
+  background-color: $cream;
+  text-align: center;
+  p{
+    @include no-margin-padding;
+    font-size: 12px;
+  }
+}

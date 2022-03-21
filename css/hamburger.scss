@@ -1,0 +1,275 @@
+/* You can add global styles here */
+$cream: #fffdce;
+$bamboo: #6cc0a2;
+$rose: #e35768;
+$pink: #f3b2c5;
+$indigo: #304a67;
+$cochineal:#bd427b;
+
+$tb-max: 1024px;
+$tb-min: 600px;
+$sp-max: 599px;
+
+@mixin resp-hmbrgr-top($tb-t: 0px, $sp-t: 0px) {
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){top: $tb-t;}
+  @media screen and (max-width: $sp-max){top: $sp-t;}
+}
+@mixin resp-hmbrgr-right($tb-r: 0px, $sp-r: 0px) {
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){right: $tb-r;}
+  @media screen and (max-width: $sp-max){right: $sp-r;}
+}
+@mixin resp-hmbrgr-bottom($tb-b: 0px, $sp-b: 0px) {
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){bottom: $tb-b;}
+  @media screen and (max-width: $sp-max){bottom: $sp-b;}
+}
+@mixin resp-hmbrgr-left($tb-l: 0px, $sp-l: 0px) {
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){left: $tb-l;}
+  @media screen and (max-width: $sp-max){left: $sp-l;}
+}
+
+@mixin resp-hmbrgr-margin-top($tb-mt: 0px, $sp-mt: 0px) {
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){margin-top: $tb-mt;}
+  @media screen and (max-width: $sp-max){margin-top: $sp-mt;}
+}
+@mixin resp-hmbrgr-margin-right($tb-mr: 0px, $sp-mr: 0px) {
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){margin-right: $tb-mr;}
+  @media screen and (max-width: $sp-max){margin-right: $sp-mr;}
+}
+@mixin resp-hmbrgr-margin-bottom($tb-mb: 0px, $sp-mb: 0px) {
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){margin-bottom: $tb-mb;}
+  @media screen and (max-width: $sp-max){margin-bottom: $sp-mb;}
+}
+@mixin resp-hmbrgr-margin-left($tb-ml: 0px, $sp-ml: 0px) {
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){margin-left: $tb-ml;}
+  @media screen and (max-width: $sp-max){margin-left: $sp-ml;}
+}
+
+@mixin resp-hmbrgr-padding-top($tb-pt: 0px, $sp-pt: 0px) {
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){padding-top: $tb-pt;}
+  @media screen and (max-width: $sp-max){padding-top: $sp-pt;}
+}
+@mixin resp-hmbrgr-padding-right($tb-pr: 0px, $sp-pr: 0px) {
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){padding-right: $tb-pr;}
+  @media screen and (max-width: $sp-max){margin-right: $sp-pr;}
+}
+@mixin resp-hmbrgr-padding-bottom($tb-pb: 0px, $sp-pb: 0px) {
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){padding-bottom: $tb-pb;}
+  @media screen and (max-width: $sp-max){padding-bottom: $sp-pb;}
+}
+@mixin resp-hmbrgr-padding-left($tb-pl: 0px, $sp-pl: 0px) {
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){margin-left: $tb-pl;}
+  @media screen and (max-width: $sp-max){margin-left: $sp-pl;}
+}
+@mixin resp-hmbrgr-margin-top-bottom($tb-mtb, $sp-mtb) {
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){margin-top: $tb-mtb; margin-bottom: $tb-mtb;}
+  @media screen and (max-width: $sp-max){margin-top: $sp-mtb; margin-bottom: $sp-mtb;}
+}
+@mixin resp-hmbrgr-padding-top-bottom($tb-mtb, $sp-mtb) {
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){padding-top: $tb-mtb; padding-bottom: $tb-mtb;}
+  @media screen and (max-width: $sp-max){padding-top: $sp-mtb; padding-bottom: $sp-mtb;}
+}
+
+@mixin resp-hmbrgr-max-width($tb-max-width: 580px, $sp-max-width: 275px) {
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){max-width: $tb-max-width;}
+  @media screen and (max-width: $sp-max){max-width: $sp-max-width;}
+}
+@mixin resp-hmbrgr-width($tb-width: 580px, $sp-width: 275px) {
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){width: $tb-width;}
+  @media screen and (max-width: $sp-max){width: $sp-width;}
+}
+@mixin resp-hmbrgr-height($tb-height: 202px, $sp-height: 130px) {
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){height: $tb-height;}
+  @media screen and (max-width: $sp-max){height: $sp-height;}
+}
+@mixin resp-hmbrgr-border-radius($tb-br, $sp-br) {
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){border-radius: $tb-br;}
+  @media screen and (max-width: $sp-max){border-radius: $sp-br;}
+}
+@mixin resp-hmbrgr-line-height($tb-line-height: 1.5, $sp-line-height: 1.4375) {
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){font-size: $tb-line-height;}
+  @media screen and (max-width: $sp-max){font-size: $sp-line-height;}
+}
+@mixin resp-hmbrgr-font-size($tb-font-size: 25px, $sp-font-size: 16px) {
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){font-size: $tb-font-size;}
+  @media screen and (max-width: $sp-max){font-size: $sp-font-size;}
+}
+
+@mixin flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin wrapper-fluid($bg-color) {
+  width: 100%;
+  background-color: $bg-color;
+}
+@mixin margin-top-bottom($mtb) {
+  margin-top: $mtb;
+  margin-bottom: $mtb;
+}
+@mixin padding-top-bottom($ptb) {
+  padding-top: $ptb;
+  padding-bottom: $ptb;
+}
+@mixin block-element-horizontal-center{
+  margin-right: auto;
+  margin-left: auto;
+}
+@mixin text-center-center {
+  text-align: center;
+  vertical-align: center;
+}
+
+/*https://coco-factory.jp/ugokuweb/move01/5-1-14/ を参考にした。ただしopacity0→1の変化を追加した。*/
+/*========= ナビゲーションのためのCSS ===============*/
+.hamburger{
+  height: auto;
+}
+#g-nav {
+  /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+  position: fixed;
+  z-index: 999;
+  /*ナビのスタート位置と形状*/
+  top: 0;
+  right: -120%;
+  background-color: $pink;
+  /*動き*/
+  transition: all 0.7s;
+  margin: 0;
+  padding: 0;
+  @include resp-hmbrgr-width(768px, 375px);
+  @include resp-hmbrgr-height(1024px, 540px);
+  opacity: 0;
+
+  #g-nav-list{
+    /*ナビゲーションの縦スクロール*/
+    /*ナビの数が増えた場合縦スクロール*/
+    z-index: 999;
+    position: fixed;
+    @include resp-hmbrgr-padding-top(100px, 80px);
+    @include resp-hmbrgr-padding-bottom(343px, 125px);
+    box-sizing: border-box;
+    @include resp-hmbrgr-width(768px, 375px);
+    @include resp-hmbrgr-height(1024px, 540px);
+
+    .g-nav-list-wrapper {
+      z-index: 999;
+      position: relative;
+      border-radius: 36px;
+      background-color: white;
+      margin: 0 auto;
+      @include resp-hmbrgr-padding-top-bottom(80px, 50px);
+      box-sizing: border-box;
+      @include resp-hmbrgr-width(570px, 295px);
+      @include resp-hmbrgr-height(581px, 335px);
+
+      p {
+        margin-top: 0;
+        @include resp-hmbrgr-margin-bottom(35px, 24px);
+        text-align: center;
+        @include resp-hmbrgr-font-size(40px, 25px);
+      }
+
+      ul {
+        @include margin-top-bottom(0);
+        padding: 0;
+
+        li {
+          @include resp-hmbrgr-margin-bottom(30px, 9px);
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          @include resp-hmbrgr-height(42px, 28px);
+          list-style: none;
+          text-align: center;
+
+          a {
+            @include resp-hmbrgr-font-size(30px, 20px);
+            color: $indigo;
+            text-decoration: none;
+          }
+        }
+      }
+
+      img {
+        position: absolute;
+        @include resp-hmbrgr-bottom(-80px, -40px);
+        left: 0px;
+        @include resp-hmbrgr-width(150px, 94px);
+        @include resp-hmbrgr-height(145px, 90px);
+      }
+    }
+  }
+
+
+}
+#g-nav.panelactive{
+/*.panelactiveクラスの前にスペースを入れない*/
+  /*アクティブクラスがついたら位置を0に*/
+  right: 0;
+  opacity: 1;
+}
+
+/*========= ボタンのためのCSS ===============*/
+.openbtn1{
+  position: sticky;
+  z-index: 9999;/*ボタンを最前面に*/
+  @include resp-hmbrgr-top(35px, 18px);
+  @include resp-hmbrgr-right(20px, 10px);
+  cursor: pointer;
+  @include resp-hmbrgr-width(50px, 30px);
+  @include resp-hmbrgr-height(30px, 20px);
+  span{
+    /*×に変化*/	
+    display: inline-block;
+    transition: all .7s;
+    position: absolute;
+    right: 0px;
+    height: 3px;
+    background-color: $indigo;
+  	width: 100%;
+  }
+  span:nth-of-type(1) {
+    top: 0px;
+  }
+  span:nth-of-type(2) {
+    @include resp-hmbrgr-top(15px, 10px);
+  }
+  span:nth-of-type(3) {
+    @include resp-hmbrgr-top(30px, 20px);
+  }
+}
+.openbtn1.active{
+/*.activeクラスの前にスペースを入れない*/
+  span:nth-of-type(1) {
+    top: 0px;
+    right: 0px;
+    @include resp-hmbrgr-width(50px, 30px);
+    @media screen and (min-width: $tb-min) and (max-width: $tb-max){
+      transform: translateX(calc(25px * (1 - 1 / 1.414))) translateY(calc(25px / 1.414)) rotate(-45deg);
+    }
+    @media screen and (max-width: $sp-max){
+      transform: translateX(calc(15px * (1 - 1 / 1.414))) translateY(calc(15px / 1.414)) rotate(-45deg);
+    }
+
+  }
+  span:nth-of-type(2) {
+    opacity: 0;
+  }
+  span:nth-of-type(3){
+    top: 0px;
+    right: 0px;
+    @include resp-hmbrgr-width(50px, 30px);
+    @media screen and (min-width: $tb-min) and (max-width: $tb-max){
+      transform: translateX(calc(25px * (1 - 1 / 1.414))) translateY(calc(25px / 1.414)) rotate(45deg);
+    }
+    @media screen and (max-width: $sp-max){
+      transform: translateX(calc(15px * (1 - 1 / 1.414))) translateY(calc(15px / 1.414)) rotate(45deg);
+    }
+  }
+}
+
+
+

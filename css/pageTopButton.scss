@@ -1,0 +1,112 @@
+/* You can add global styles here */
+$cream: #fffdce;
+$bamboo: #6cc0a2;
+$rose: #e35768;
+$pink: #f3b2c5;
+$indigo: #304a67;
+$cochineal:#bd427b;
+
+$pc-min: 1025px;
+$tb-max: 1024px;
+$tb-min: 600px;
+$sp-max: 599px;
+
+@mixin flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin square($sq) {
+  width: $sq;
+  height: $sq;
+}
+
+/*https://coco-factory.jp/ugokuweb/move01/8-1-2/ を参考にした*/
+/*リンクの形状*/
+#page-top{
+  margin: 0;
+  a{
+    margin: 0;
+    @include flex-center-center;
+    background:white;
+    border-radius: 50%;
+    @media screen and (min-width: $pc-min){display: none;}
+    @media screen and (min-width: $tb-min) and (max-width: $tb-max){@include square(80px);}
+    @media screen and (max-width: $sp-max){@include square(40px);}
+    box-shadow: 0 3px 6px #00000018;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase; 
+    text-decoration: none;
+    font-size:2.5rem;
+    transition:all 0.3s;
+    span{
+      background-color: $indigo;
+      @media screen and (min-width: $tb-min) and (max-width: $tb-max){
+        width: 16px;
+        height: 5px;
+        &:nth-of-type(1){
+          transform: translateX(3.5px) rotate(135deg);
+        }
+        &:nth-of-type(2){
+          transform: translateX(-3.5px) rotate(-135deg);
+        }
+      }
+      @media screen and (max-width: $sp-max){
+        width: 10px;
+        height: 3px;
+        &:nth-of-type(1){
+          transform: translateX(2px) rotate(135deg);
+        }
+        &:nth-of-type(2){
+          transform: translateX(-2px) rotate(-135deg);
+        }
+      }
+
+    }
+  }
+}
+
+
+/*リンクを右下に固定*/
+#page-top {
+	position: fixed;
+	right: 15px;
+	bottom: 60px;
+	z-index: 9999;
+    /*はじめは非表示*/
+	opacity: 0;
+	transform: translateY(100px);
+}
+
+/*　上に上がる動き　*/
+
+#page-top.UpMove{
+	animation: UpAnime 0.5s forwards;
+}
+@keyframes UpAnime{
+  from {
+    opacity: 0;
+	transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+	transform: translateY(0);
+  }
+}
+
+/*　下に下がる動き　*/
+
+#page-top.DownMove{
+	animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime{
+  from {
+  	opacity: 1;
+	transform: translateY(0);
+  }
+  to {
+  	opacity: 1;
+	transform: translateY(100px);
+  }
+}
