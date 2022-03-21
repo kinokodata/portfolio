@@ -168,7 +168,7 @@ $sp-max: 599px;
 }
 @mixin bg-img($img-name:works-bg) {
   background: {
-    image: url("../img#{$img-name}.png");
+    image: url("../img/#{$img-name}.png");
     repeat: no-repeat;
     position: top;
     size: 100%;
