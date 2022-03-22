@@ -296,8 +296,8 @@ header{
               margin-left: 0;
               padding: 0;
               color: $indigo;
-              opacity: 0.1;
-              @include resp-font-size(40px, 20px, 6px);
+              opacity: 0.4;
+              @include resp-font-size(40px, 20px, 10px);
             }
           }
         }
