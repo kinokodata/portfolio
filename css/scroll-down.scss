@@ -58,14 +58,14 @@ $sp-max: 599px;
 /*下からの距離が変化して丸の全体が上から下に動く*/
 @media screen and (min-width: $tb-min){
   @keyframes circlemove{
-    0%{bottom: 45px;}
+    0%{bottom: 75px;}
     100%{bottom:-5px;}
   }
 }
 @media screen and (max-width: $sp-max){
   @keyframes circlemove{
-    0%{bottom: 25px;}
-    100%{bottom:-5px;}
+    0%{bottom: 36px;}
+    100%{bottom: -4px;}
   }
 }
 
