@@ -562,6 +562,9 @@ header{
       }
     }
   }
+  .wrapper.zoomin{
+    opacity: 0;
+  }
   .wrapper.zoomin.is-animated {
     animation: zoomIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
   }
