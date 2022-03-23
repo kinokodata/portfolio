@@ -630,9 +630,6 @@ header{
         flex-wrap: nowrap;
         @include resp-height(53px, 53px, 32px);
         border-bottom: 2px white solid;
-        @media screen and (max-width: $sp-max){
-          &:nth-child(4){height: 55px;}
-        }
         &:last-child{margin-bottom: 0;}
         .th{
           @include resp-padding-left(25px, 10px, 5px);
