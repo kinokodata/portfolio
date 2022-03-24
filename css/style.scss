@@ -75,9 +75,9 @@ $sp-max: 599px;
   @media screen and (max-width: $sp-max){padding-bottom: $sp-pb;}
 }
 @mixin resp-padding-left($pc-pl: 0px, $tb-pl: 0px, $sp-pl: 0px) {
-  @media screen and (min-width: $pc-min){margin-left: $pc-pl;}
-  @media screen and (min-width: $tb-min) and (max-width: $tb-max){margin-left: $tb-pl;}
-  @media screen and (max-width: $sp-max){margin-left: $sp-pl;}
+  @media screen and (min-width: $pc-min){padding-left: $pc-pl;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){padding-left: $tb-pl;}
+  @media screen and (max-width: $sp-max){padding-left: $sp-pl;}
 }
 @mixin resp-margin-top-bottom($pc-mtb, $tb-mtb, $sp-mtb) {
   @media screen and (min-width: $pc-min){margin-top: $pc-mtb; margin-bottom: $pc-mtb;}
@@ -185,7 +185,7 @@ header, section, footer{
   margin: 0;
   width: 100%;
 }
-h1, h2, h3, p, a, li, .th{
+h1, h2, h3, p, a, li, th{
   line-height: 1.4;
   font-weight: 700;
   color: $indigo;
@@ -343,8 +343,8 @@ header{
   @include resp-right(40px, 20px, 10px);
   .pc-navi{
     @media screen and (max-width: $tb-max){display: none;}
-    top: 0px;
-    right: 0px;
+    top: 0;
+    right: 0;
     padding: 0;
     display: flex;
     justify-content: center;
@@ -614,34 +614,40 @@ header{
     }
     transform: translateY(-1px);
   }
-  .wrapper-bg{
+  .wrapper-bg {
     margin: 0;
     @include resp-padding-top(54px, 48px, 34px);
     @include resp-padding-bottom(44px, 49px, 35px);
     background-color: $pink;
     text-align: center;
-    h1{
+
+    h1 {
       margin-top: 0;
       color: white;
     }
-    .table{
+
+    table {
       margin: 0 auto;
       @include resp-max-width(800px, 600px, 275px);
-      .tr{
+      tr {
         @include resp-margin-bottom(24px, 24px, 15px);
         display: flex;
         flex-wrap: nowrap;
         @include resp-height(53px, 53px, 32px);
         border-bottom: 2px white solid;
-        &:last-child{margin-bottom: 0;}
-        .th{
-          @include resp-padding-left(25px, 10px, 5px);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+        th {
+          @include resp-margin-left(25px, 10px, 5px);
+          padding: 0;
           @include resp-width(265px, 190px, 115px);
           text-align: start;
           vertical-align: top;
         }
-        .td{
-          padding-left: 0;
+        td {
+          padding: 0;
           @include resp-width(535px, 410px, 160px);
           text-align: start;
           vertical-align: top;
