@@ -241,7 +241,6 @@ h1, h2, h3, p, li, .th, .td, button {
 header{
   @include resp-padding-bottom(100px, 76px, 50px);
   position: relative;
-  overflow: hidden;
   .fadeIn{
     @include no-margin-padding;
     width: 100%;
@@ -309,11 +308,15 @@ header{
       position: relative;
       width: 100%;
       height: calc(119 / 2251 *100vw);
-      @include bg-img(fv-bg1-bottom);
+      background: {
+        image: url("../img/fv-bg1-bottom.png");
+        repeat: no-repeat;
+        position: top;
+        size: 100%;
+      }
     }
     .greeting{
       margin: 0 auto;
-      overflow: hidden;
       @include resp-max-width(1000px, 580px, 300px);
       h1, p{
         text-align: center;
@@ -368,15 +371,30 @@ header{
     @include no-margin-padding;
     @media screen and (min-width: $pc-min){
       height: calc(118 / 2847 *100vw);
-      @include bg-img(works-bg-top);
+      background: {
+        image: url("../img/works-bg-top.png");
+        repeat: no-repeat;
+        position: top;
+        size: 100%;
+      }
     }
     @media screen and (min-width: $tb-min) and (max-width: $tb-max){
       height: calc(67 / 1601 *100vw);
-      @include bg-img(works-bg-tb-top);
+      background: {
+        image: url("../img/works-bg-tb-top.png");
+        repeat: no-repeat;
+        position: top;
+        size: 100%;
+      }
     }
     @media screen and (max-width: $sp-max){
       height: calc(16 / 375 *100vw);
-      @include bg-img(works-bg-sp-top);
+      background: {
+        image: url("../img/works-bg-sp-top.png");
+        repeat: no-repeat;
+        position: top;
+        size: 100%;
+      }
     }
     transform: translateY(1px);
   }
@@ -384,15 +402,30 @@ header{
     margin:0;
     @media screen and (min-width: $pc-min){
       height: calc(114 / 2847 *100vw);
-      @include bg-img(works-bg-bottom);
+      background: {
+        image: url("../img/works-bg-bottom.png");
+        repeat: no-repeat;
+        position: top;
+        size: 100%;
+      }
     }
     @media screen and (min-width: $tb-min) and (max-width: $tb-max){
       height: calc(65 / 1601 *100vw);
-      @include bg-img(works-bg-tb-bottom);
+      background: {
+        image: url("../img/works-bg-tb-bottom.png");
+        repeat: no-repeat;
+        position: top;
+        size: 100%;
+      }
     }
     @media screen and (max-width: $sp-max){
       height: calc(17 / 375 *100vw);
-      @include bg-img(works-bg-sp-bottom);
+      background: {
+        image: url("../img/works-bg-sp-bottom.png");
+        repeat: no-repeat;
+        position: top;
+        size: 100%;
+      }
     }
     transform: translateY(-1px);
   }
@@ -474,7 +507,6 @@ header{
 }
 
 #service{
-  overflow: hidden;
   h1{
     text-align: center;
     color: $indigo;
@@ -528,7 +560,6 @@ header{
 #profile{
   @include resp-margin-top(100px, 80px, 50px);
   @include resp-margin-bottom(100px, 50px, 50px);
-  overflow: hidden;
   .sectionInner{
     margin: 0 auto;
     @include resp-padding-top(100px, 50px, 50px);
@@ -591,15 +622,30 @@ header{
     margin:0;
     @media screen and (min-width: $pc-min){
       height: calc(97 / 2847 *100vw);
-      @include bg-img(about-bg-top);
+      background: {
+        image: url("../img/about-bg-top.png");
+        repeat: no-repeat;
+        position: top;
+        size: 100%;
+      }
     }
     @media screen and (min-width: $tb-min) and (max-width: $tb-max){
       height: calc(67 / 1601 *100vw);
-      @include bg-img(about-bg-tb-top);
+      background: {
+        image: url("../img/about-bg-tb-top.png");
+        repeat: no-repeat;
+        position: top;
+        size: 100%;
+      }
     }
     @media screen and (max-width: $sp-max){
       height: calc(16 / 375 *100vw);
-      @include bg-img(about-bg-sp-top);
+      background: {
+        image: url("../img/about-bg-sp-top.png");
+        repeat: no-repeat;
+        position: top;
+        size: 100%;
+      }
     }
     transform: translateY(1px);
   }
@@ -607,15 +653,30 @@ header{
     margin:0;
     @media screen and (min-width: $pc-min){
       height: calc(116 / 2847 *100vw);
-      @include bg-img(about-bg-bottom);
+      background: {
+        image: url("../img/about-bg-bottom.png");
+        repeat: no-repeat;
+        position: top;
+        size: 100%;
+      }
     }
     @media screen and (min-width: $tb-min) and (max-width: $tb-max){
       height: calc(65 / 1601 *100vw);
-      @include bg-img(about-bg-tb-bottom);
+      background: {
+        image: url("../img/about-bg-tb-bottom.png");
+        repeat: no-repeat;
+        position: top;
+        size: 100%;
+      }
     }
     @media screen and (max-width: $sp-max){
       height: calc(16 / 375 *100vw);
-      @include bg-img(about-bg-sp-bottom);
+      background: {
+        image: url("../img/about-bg-sp-bottom.png");
+        repeat: no-repeat;
+        position: top;
+        size: 100%;
+      }
     }
     transform: translateY(-1px);
   }
@@ -623,7 +684,6 @@ header{
     margin: 0;
     @include resp-padding-top(54px, 48px, 34px);
     @include resp-padding-bottom(44px, 49px, 35px);
-    overflow: hidden;
     background-color: $pink;
     text-align: center;
 
@@ -666,7 +726,6 @@ header{
 }
 
 #contact{
-  overflow: hidden;
   text-align: center;
   p{
     margin-top: 0;
