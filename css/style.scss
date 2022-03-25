@@ -241,6 +241,7 @@ h1, h2, h3, p, li, .th, .td, button {
 header{
   @include resp-padding-bottom(100px, 76px, 50px);
   position: relative;
+  overflow: hidden;
   .fadeIn{
     @include no-margin-padding;
     width: 100%;
@@ -312,6 +313,7 @@ header{
     }
     .greeting{
       margin: 0 auto;
+      overflow: hidden;
       @include resp-max-width(1000px, 580px, 300px);
       h1, p{
         text-align: center;
@@ -471,6 +473,7 @@ header{
 }
 
 #service{
+  overflow: hidden;
   h1{
     text-align: center;
     color: $indigo;
@@ -524,6 +527,7 @@ header{
 #profile{
   @include resp-margin-top(100px, 80px, 50px);
   @include resp-margin-bottom(100px, 50px, 50px);
+  overflow: hidden;
   .sectionInner{
     margin: 0 auto;
     @include resp-padding-top(100px, 50px, 50px);
@@ -618,6 +622,7 @@ header{
     margin: 0;
     @include resp-padding-top(54px, 48px, 34px);
     @include resp-padding-bottom(44px, 49px, 35px);
+    overflow: hidden;
     background-color: $pink;
     text-align: center;
 
@@ -660,6 +665,7 @@ header{
 }
 
 #contact{
+  overflow: hidden;
   text-align: center;
   p{
     margin-top: 0;
