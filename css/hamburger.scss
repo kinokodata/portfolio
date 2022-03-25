@@ -99,7 +99,7 @@ $sp-max: 599px;
   align-items: center;
   justify-content: center;
 }
-@mixin wrapper-fluid($bg-color) {
+@mixin fluid($bg-color) {
   width: 100%;
   background-color: $bg-color;
 }
@@ -137,7 +137,7 @@ $sp-max: 599px;
   transition: all 0.7s;
   margin: 0;
   padding: 0;
-  @include resp-hmbrgr-width(768px, 375px);
+  width: 100%;
   @include resp-hmbrgr-height(1024px, 540px);
   opacity: 0;
 
