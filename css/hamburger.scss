@@ -149,7 +149,7 @@ $sp-max: 599px;
     @include resp-hmbrgr-padding-top(100px, 80px);
     @include resp-hmbrgr-padding-bottom(343px, 125px);
     box-sizing: border-box;
-    @include resp-hmbrgr-width(768px, 375px);
+    width: 100%;
     @include resp-hmbrgr-height(1024px, 540px);
 
     .g-nav-list-wrapper {
@@ -157,7 +157,7 @@ $sp-max: 599px;
       position: relative;
       border-radius: 36px;
       background-color: white;
-      margin: 0 auto;
+      @include block-element-horizontal-center;
       @include resp-hmbrgr-padding-top-bottom(80px, 50px);
       box-sizing: border-box;
       @include resp-hmbrgr-width(570px, 295px);
