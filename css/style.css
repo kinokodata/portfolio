@@ -965,14 +965,11 @@ header .fadeIn .wrapper-bg .fv .copy p:last-child {
   }
 }
 header .fadeIn .bg-bottom {
-  margin: 0;
   position: relative;
+}
+header .fadeIn .bg-bottom img {
   width: 100%;
   height: 5.2865393159vw;
-  background-image: url("https://github.com/hyperkinoko/portfolio/img/fv-bg1-bottom.png");
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: 100%;
 }
 header .fadeIn .greeting {
   margin: 0 auto;
@@ -1099,64 +1096,64 @@ header .fadeIn .greeting p {
 #works .bg-top {
   margin: 0;
   padding: 0;
-  transform: translateY(1px);
+  transform: translateY(4px);
 }
 @media screen and (min-width: 1025px) {
-  #works .bg-top {
+  #works .bg-top img.bg-pc {
+    width: 100%;
     height: 4.1447137338vw;
-    background-image: url("https://github.com/hyperkinoko/portfolio/img/works-bg-top.png");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 100%;
+  }
+  #works .bg-top img.bg-tb, #works .bg-top img.bg-sp {
+    display: none;
   }
 }
 @media screen and (min-width: 600px) and (max-width: 1024px) {
-  #works .bg-top {
+  #works .bg-top img.bg-tb {
+    width: 100%;
     height: 4.1848844472vw;
-    background-image: url("https://github.com/hyperkinoko/portfolio/img/works-bg-tb-top.png");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 100%;
+  }
+  #works .bg-top img.bg-pc, #works .bg-top img.bg-sp {
+    display: none;
   }
 }
 @media screen and (max-width: 599px) {
-  #works .bg-top {
+  #works .bg-top img.bg-sp {
+    width: 100%;
     height: 4.2666666667vw;
-    background-image: url("https://github.com/hyperkinoko/portfolio/img/works-bg-sp-top.png");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 100%;
+  }
+  #works .bg-top img.bg-pc, #works .bg-top img.bg-tb {
+    display: none;
   }
 }
 #works .bg-bottom {
   margin: 0;
-  transform: translateY(-1px);
+  padding: 0;
 }
 @media screen and (min-width: 1025px) {
-  #works .bg-bottom {
+  #works .bg-bottom img.bg-pc {
+    width: 100%;
     height: 4.0042149631vw;
-    background-image: url("https://github.com/hyperkinoko/portfolio/img/works-bg-bottom.png");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 100%;
+  }
+  #works .bg-bottom img.bg-tb, #works .bg-bottom img.bg-sp {
+    display: none;
   }
 }
 @media screen and (min-width: 600px) and (max-width: 1024px) {
-  #works .bg-bottom {
+  #works .bg-bottom img.bg-tb {
+    width: 100%;
     height: 4.0599625234vw;
-    background-image: url("https://github.com/hyperkinoko/portfolio/img/works-bg-tb-bottom.png");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 100%;
+  }
+  #works .bg-bottom img.bg-pc, #works .bg-bottom img.bg-sp {
+    display: none;
   }
 }
 @media screen and (max-width: 599px) {
-  #works .bg-bottom {
+  #works .bg-bottom img.bg-sp {
+    width: 100%;
     height: 4.5333333333vw;
-    background-image: url("https://github.com/hyperkinoko/portfolio/img/works-bg-sp-bottom.png");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 100%;
+  }
+  #works .bg-bottom img.bg-pc, #works .bg-bottom img.bg-tb {
+    display: none;
   }
 }
 #works .sectionInner {
@@ -1789,64 +1786,65 @@ header .fadeIn .greeting p {
 
 #about .bg-top {
   margin: 0;
-  transform: translateY(1px);
+  padding: 0;
+  transform: translateY(4px);
 }
 @media screen and (min-width: 1025px) {
-  #about .bg-top {
+  #about .bg-top img.bg-pc {
+    width: 100%;
     height: 3.4070951879vw;
-    background-image: url("https://github.com/hyperkinoko/portfolio/img/about-bg-top.png");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 100%;
+  }
+  #about .bg-top img.bg-tb, #about .bg-top img.bg-sp {
+    display: none;
   }
 }
 @media screen and (min-width: 600px) and (max-width: 1024px) {
-  #about .bg-top {
+  #about .bg-top img.bg-tb {
+    width: 100%;
     height: 4.1848844472vw;
-    background-image: url("https://github.com/hyperkinoko/portfolio/img/about-bg-tb-top.png");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 100%;
+  }
+  #about .bg-top img.bg-pc, #about .bg-top img.bg-sp {
+    display: none;
   }
 }
 @media screen and (max-width: 599px) {
-  #about .bg-top {
+  #about .bg-top img.bg-sp {
+    width: 100%;
     height: 4.2666666667vw;
-    background-image: url("https://github.com/hyperkinoko/portfolio/img/about-bg-sp-top.png");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 100%;
+  }
+  #about .bg-top img.bg-pc, #about .bg-top img.bg-tb {
+    display: none;
   }
 }
 #about .bg-bottom {
   margin: 0;
-  transform: translateY(-1px);
+  padding: 0;
 }
 @media screen and (min-width: 1025px) {
-  #about .bg-bottom {
+  #about .bg-bottom img.bg-pc {
+    width: 100%;
     height: 4.0744643484vw;
-    background-image: url("https://github.com/hyperkinoko/portfolio/img/about-bg-bottom.png");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 100%;
+  }
+  #about .bg-bottom img.bg-tb, #about .bg-bottom img.bg-sp {
+    display: none;
   }
 }
 @media screen and (min-width: 600px) and (max-width: 1024px) {
-  #about .bg-bottom {
+  #about .bg-bottom img.bg-tb {
+    width: 100%;
     height: 4.0599625234vw;
-    background-image: url("https://github.com/hyperkinoko/portfolio/img/about-bg-tb-bottom.png");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 100%;
+  }
+  #about .bg-bottom img.bg-pc, #about .bg-bottom img.bg-sp {
+    display: none;
   }
 }
 @media screen and (max-width: 599px) {
-  #about .bg-bottom {
+  #about .bg-bottom img.bg-sp {
+    width: 100%;
     height: 4.2666666667vw;
-    background-image: url("https://github.com/hyperkinoko/portfolio/img/about-bg-sp-bottom.png");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 100%;
+  }
+  #about .bg-bottom img.bg-pc, #about .bg-bottom img.bg-tb {
+    display: none;
   }
 }
 #about .sectionInner {

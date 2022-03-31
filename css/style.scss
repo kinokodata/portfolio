@@ -168,7 +168,7 @@ $sp-max: 599px;
 }
 @mixin bg-img($img-name:works-bg) {
   background: {
-    image: url("../img/#{$img-name}.png");
+    image: url("https://github.com/hyperkinoko/portfolio/img/#{$img-name}.png");
     repeat: no-repeat;
     position: top;
     size: 100%;
@@ -305,11 +305,11 @@ header{
       }
     }
     .bg-bottom{
-      margin: 0;
       position: relative;
-      width: 100%;
-      height: calc(119 / 2251 *100vw);
-      @include bg-img(fv-bg1-bottom);
+      img{
+        width: 100%;
+        height: calc(119 / 2251 *100vw);
+      }
     }
     .greeting{
       margin: 0 auto;
@@ -366,35 +366,76 @@ header{
 #works{
   .bg-top{
     @include no-margin-padding;
+    transform: translateY(4px);
     @media screen and (min-width: $pc-min){
-      height: calc(118 / 2847 *100vw);
-      @include bg-img(works-bg-top);
+      img{
+        &.bg-pc{
+          width: 100%;
+          height: calc(118 / 2847 *100vw);
+        }
+        &.bg-tb, &.bg-sp{
+          display: none;
+        }
+      }
     }
     @media screen and (min-width: $tb-min) and (max-width: $tb-max){
-      height: calc(67 / 1601 *100vw);
-      @include bg-img(works-bg-tb-top);
+      img{
+        &.bg-tb{
+          width: 100%;
+          height: calc(67 / 1601 *100vw);
+        }
+        &.bg-pc, &.bg-sp{
+          display: none;
+        }
+      }
     }
     @media screen and (max-width: $sp-max){
-      height: calc(16 / 375 *100vw);
-      @include bg-img(works-bg-sp-top);
+      img{
+        &.bg-sp{
+          width: 100%;
+          height: calc(16 / 375 *100vw);
+        }
+        &.bg-pc, &.bg-tb{
+          display: none;
+        }
+      }
     }
-    transform: translateY(1px);
   }
   .bg-bottom{
-    margin:0;
+    @include no-margin-padding;
     @media screen and (min-width: $pc-min){
-      height: calc(114 / 2847 *100vw);
-      @include bg-img(works-bg-bottom);
+      img{
+        &.bg-pc{
+          width: 100%;
+          height: calc(114 / 2847 *100vw);
+        }
+        &.bg-tb, &.bg-sp{
+          display: none;
+        }
+      }
     }
     @media screen and (min-width: $tb-min) and (max-width: $tb-max){
-      height: calc(65 / 1601 *100vw);
-      @include bg-img(works-bg-tb-bottom);
+      img{
+        &.bg-tb{
+          width: 100%;
+          height: calc(65 / 1601 *100vw);
+        }
+        &.bg-pc, &.bg-sp{
+          display: none;
+        }
+      }
     }
     @media screen and (max-width: $sp-max){
-      height: calc(17 / 375 *100vw);
-      @include bg-img(works-bg-sp-bottom);
+      img{
+        &.bg-sp{
+          width: 100%;
+          height: calc(17 / 375 *100vw);
+        }
+        &.bg-pc, &.bg-tb{
+          display: none;
+        }
+      }
     }
-    transform: translateY(-1px);
   }
   .sectionInner{
     margin: 0;
@@ -588,36 +629,80 @@ header{
 
 #about{
   .bg-top{
-    margin:0;
+    @include no-margin-padding;
+    transform: translateY(4px);
     @media screen and (min-width: $pc-min){
-      height: calc(97 / 2847 *100vw);
-      @include bg-img(about-bg-top);
+      img{
+        &.bg-pc{
+          width: 100%;
+          height: calc(97 / 2847 *100vw);
+        }
+        &.bg-tb, &.bg-sp{
+          display: none;
+        }
+      }
     }
     @media screen and (min-width: $tb-min) and (max-width: $tb-max){
-      height: calc(67 / 1601 *100vw);
-      @include bg-img(about-bg-tb-top);
+      img{
+        &.bg-tb{
+          width: 100%;
+          height: calc(67 / 1601 *100vw);
+        }
+        &.bg-pc, &.bg-sp{
+          display: none;
+        }
+      }
     }
     @media screen and (max-width: $sp-max){
-      height: calc(16 / 375 *100vw);
-      @include bg-img(about-bg-sp-top);
+      img{
+        &.bg-sp{
+          width: 100%;
+          height: calc(16 / 375 *100vw);
+        }
+        &.bg-pc, &.bg-tb{
+          display: none;
+        }
+      }
     }
-    transform: translateY(1px);
   }
-  .bg-bottom{
-    margin:0;
-    @media screen and (min-width: $pc-min){
-      height: calc(116 / 2847 *100vw);
-      @include bg-img(about-bg-bottom);
+  .bg-bottom {
+    @include no-margin-padding;
+    @media screen and (min-width: $pc-min) {
+      img {
+        &.bg-pc {
+          width: 100%;
+          height: calc(116 / 2847 * 100vw);
+        }
+
+        &.bg-tb, &.bg-sp {
+          display: none;
+        }
+      }
     }
-    @media screen and (min-width: $tb-min) and (max-width: $tb-max){
-      height: calc(65 / 1601 *100vw);
-      @include bg-img(about-bg-tb-bottom);
+    @media screen and (min-width: $tb-min) and (max-width: $tb-max) {
+      img {
+        &.bg-tb {
+          width: 100%;
+          height: calc(65 / 1601 * 100vw);
+        }
+
+        &.bg-pc, &.bg-sp {
+          display: none;
+        }
+      }
     }
-    @media screen and (max-width: $sp-max){
-      height: calc(16 / 375 *100vw);
-      @include bg-img(about-bg-sp-bottom);
+    @media screen and (max-width: $sp-max) {
+      img {
+        &.bg-sp {
+          width: 100%;
+          height: calc(16 / 375 * 100vw);
+        }
+
+        &.bg-pc, &.bg-tb {
+          display: none;
+        }
+      }
     }
-    transform: translateY(-1px);
   }
   .sectionInner{
     margin: 0;
