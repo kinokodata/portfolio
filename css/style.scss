@@ -1,7 +1,7 @@
 /* You can add global styles, and also import other style files here */
-@import "hamburger.scss";
-@import "scrollDown.scss";
-@import "pageTopButton.scss";
+@import "hamburger";
+@import "scroll-down";
+@import "page-top-button";
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;900&display=swap');
 
 $cream: #fffdce;
@@ -75,9 +75,9 @@ $sp-max: 599px;
   @media screen and (max-width: $sp-max){padding-bottom: $sp-pb;}
 }
 @mixin resp-padding-left($pc-pl: 0px, $tb-pl: 0px, $sp-pl: 0px) {
-  @media screen and (min-width: $pc-min){margin-left: $pc-pl;}
-  @media screen and (min-width: $tb-min) and (max-width: $tb-max){margin-left: $tb-pl;}
-  @media screen and (max-width: $sp-max){margin-left: $sp-pl;}
+  @media screen and (min-width: $pc-min){padding-left: $pc-pl;}
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){padding-left: $tb-pl;}
+  @media screen and (max-width: $sp-max){padding-left: $sp-pl;}
 }
 @mixin resp-margin-top-bottom($pc-mtb, $tb-mtb, $sp-mtb) {
   @media screen and (min-width: $pc-min){margin-top: $pc-mtb; margin-bottom: $pc-mtb;}
@@ -138,7 +138,7 @@ $sp-max: 599px;
   align-items: center;
   justify-content: center;
 }
-@mixin wrapper-fluid($bg-color) {
+@mixin fluid($bg-color) {
   width: 100%;
   background-color: $bg-color;
 }
@@ -168,7 +168,7 @@ $sp-max: 599px;
 }
 @mixin bg-img($img-name:works-bg) {
   background: {
-    image: url("../img/#{$img-name}.png");
+    image: url("https://github.com/hyperkinoko/portfolio/img/#{$img-name}.png");
     repeat: no-repeat;
     position: top;
     size: 100%;
@@ -185,7 +185,7 @@ header, section, footer{
   margin: 0;
   width: 100%;
 }
-h1, h2, h3, p, a, li, .th{
+h1, h2, h3, p, a, li, th{
   line-height: 1.4;
   font-weight: 700;
   color: $indigo;
@@ -241,6 +241,7 @@ h1, h2, h3, p, li, .th, .td, button {
 header{
   @include resp-padding-bottom(100px, 76px, 50px);
   position: relative;
+  overflow: hidden;
   .fadeIn{
     @include no-margin-padding;
     width: 100%;
@@ -251,14 +252,14 @@ header{
     .wrapper-bg{
       margin: 0;
       @include resp-padding-bottom(0px, 10px, 39px);
-      @include wrapper-fluid($cream);
+      @include fluid($cream);
       .logo{
         @include resp-margin-top(20px, 20px, 10px);
         @include resp-margin-left(40px, 20px, 10px);
         @include resp-max-width(100px, 100px, 60px);
         @include resp-height(60px, 60px, 36px);
       }
-      .wrapper{
+      .fv{
         @include resp-margin-top(70px, 24px, 34px);
         @include block-element-horizontal-center;
         margin-bottom: 0;
@@ -267,7 +268,7 @@ header{
         justify-content: space-between;
         flex-wrap: nowrap;
         @include resp-max-width(1000px, 580px, 275px); /*tb、sp要確認→block-element-horizontal-centerではないかも*/
-        .fv{
+        img{
           margin: 0;
           @include resp-max-width(400px, 200px, 130px);
           @include resp-height(412px, 202px, 130px);
@@ -296,22 +297,23 @@ header{
               margin-left: 0;
               padding: 0;
               color: $indigo;
-              opacity: 0.1;
-              @include resp-font-size(40px, 20px, 6px);
+              opacity: 0.4;
+              @include resp-font-size(40px, 20px, 10px);
             }
           }
         }
       }
     }
     .bg-bottom{
-      margin: 0;
       position: relative;
-      width: 100%;
-      height: calc(119 / 2251 *100vw);
-      @include bg-img(fv-bg1-bottom);
+      img{
+        width: 100%;
+        height: calc(119 / 2251 *100vw);
+      }
     }
     .greeting{
       margin: 0 auto;
+      overflow: hidden;
       @include resp-max-width(1000px, 580px, 300px);
       h1, p{
         text-align: center;
@@ -343,8 +345,8 @@ header{
   @include resp-right(40px, 20px, 10px);
   .pc-navi{
     @media screen and (max-width: $tb-max){display: none;}
-    top: 0px;
-    right: 0px;
+    top: 0;
+    right: 0;
     padding: 0;
     display: flex;
     justify-content: center;
@@ -364,47 +366,89 @@ header{
 #works{
   .bg-top{
     @include no-margin-padding;
+    transform: translateY(4px);
     @media screen and (min-width: $pc-min){
-      height: calc(118 / 2847 *100vw);
-      @include bg-img(works-bg-top);
+      img{
+        &.bg-pc{
+          width: 100%;
+          height: calc(118 / 2847 *100vw);
+        }
+        &.bg-tb, &.bg-sp{
+          display: none;
+        }
+      }
     }
     @media screen and (min-width: $tb-min) and (max-width: $tb-max){
-      height: calc(67 / 1601 *100vw);
-      @include bg-img(works-bg-tb-top);
+      img{
+        &.bg-tb{
+          width: 100%;
+          height: calc(67 / 1601 *100vw);
+        }
+        &.bg-pc, &.bg-sp{
+          display: none;
+        }
+      }
     }
     @media screen and (max-width: $sp-max){
-      height: calc(16 / 375 *100vw);
-      @include bg-img(works-bg-sp-top);
+      img{
+        &.bg-sp{
+          width: 100%;
+          height: calc(16 / 375 *100vw);
+        }
+        &.bg-pc, &.bg-tb{
+          display: none;
+        }
+      }
     }
-    transform: translateY(1px);
   }
   .bg-bottom{
-    margin:0;
+    @include no-margin-padding;
     @media screen and (min-width: $pc-min){
-      height: calc(114 / 2847 *100vw);
-      @include bg-img(works-bg-bottom);
+      img{
+        &.bg-pc{
+          width: 100%;
+          height: calc(114 / 2847 *100vw);
+        }
+        &.bg-tb, &.bg-sp{
+          display: none;
+        }
+      }
     }
     @media screen and (min-width: $tb-min) and (max-width: $tb-max){
-      height: calc(65 / 1601 *100vw);
-      @include bg-img(works-bg-tb-bottom);
+      img{
+        &.bg-tb{
+          width: 100%;
+          height: calc(65 / 1601 *100vw);
+        }
+        &.bg-pc, &.bg-sp{
+          display: none;
+        }
+      }
     }
     @media screen and (max-width: $sp-max){
-      height: calc(17 / 375 *100vw);
-      @include bg-img(works-bg-sp-bottom);
+      img{
+        &.bg-sp{
+          width: 100%;
+          height: calc(17 / 375 *100vw);
+        }
+        &.bg-pc, &.bg-tb{
+          display: none;
+        }
+      }
     }
-    transform: translateY(-1px);
   }
-  .wrapper-bg{
+  .sectionInner{
     margin: 0;
     @include resp-padding-top(42px, 48px, 31px);
     @include resp-padding-bottom(45px, 59px, 32px);
+    overflow: hidden;
     background-color: $pink;
     h1{
       margin-top: 0 !important;
       text-align: center;
       color: white;
     }
-    .wrapper{
+    .gridLayout{
       margin: 0 auto;
       @include resp-max-width(1000px, 654px, 300px);
       display: flex;
@@ -412,15 +456,15 @@ header{
       justify-content: space-between;
       @include resp-row-gap(40px, 35px, 25px);
       @include resp-col-gap(50px, 54px, 0);
-      .wrapper2{
+      article{
         display: flex;
         width: 300px;
         height: 480px;
-        article{
+        .cardInner{
           position: relative;
           padding-right: 30px;/*img, h3, pをmax-widthじゃなくてwidthにすればここ2行はautoでもいいが、もうこのままにする。*/
           padding-left: 30px;
-          @include wrapper-fluid(white);
+          @include fluid(white);
           height: 480px;
           border-radius: 25px;
           img{
@@ -471,6 +515,7 @@ header{
 }
 
 #service{
+  overflow: hidden;
   h1{
     text-align: center;
     color: $indigo;
@@ -524,14 +569,15 @@ header{
 #profile{
   @include resp-margin-top(100px, 80px, 50px);
   @include resp-margin-bottom(100px, 50px, 50px);
-  .wrapper{
+  overflow: hidden;
+  .sectionInner{
     margin: 0 auto;
     @include resp-padding-top(100px, 50px, 50px);
     @include resp-padding-bottom(100px, 50px, 50px);
     @include resp-width(1000px, 100%, 100%);
     background-color: $cream;
     @media screen and (min-width: $pc-min){border-radius: 45px;}
-    .wrapper2{
+    .wrapper{
       margin: 0 auto;
       @include resp-width(1000px, 560px, 275px);
       text-align: center;
@@ -562,7 +608,10 @@ header{
       }
     }
   }
-  .wrapper.zoomin.is-animated {
+  .sectionInner.zoomin{
+    opacity: 0;
+  }
+  .sectionInner.zoomin.is-animated {
     animation: zoomIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
   }
 
@@ -580,68 +629,116 @@ header{
 
 #about{
   .bg-top{
-    margin:0;
+    @include no-margin-padding;
+    transform: translateY(4px);
     @media screen and (min-width: $pc-min){
-      height: calc(97 / 2847 *100vw);
-      @include bg-img(about-bg-top);
+      img{
+        &.bg-pc{
+          width: 100%;
+          height: calc(97 / 2847 *100vw);
+        }
+        &.bg-tb, &.bg-sp{
+          display: none;
+        }
+      }
     }
     @media screen and (min-width: $tb-min) and (max-width: $tb-max){
-      height: calc(67 / 1601 *100vw);
-      @include bg-img(about-bg-tb-top);
+      img{
+        &.bg-tb{
+          width: 100%;
+          height: calc(67 / 1601 *100vw);
+        }
+        &.bg-pc, &.bg-sp{
+          display: none;
+        }
+      }
     }
     @media screen and (max-width: $sp-max){
-      height: calc(16 / 375 *100vw);
-      @include bg-img(about-bg-sp-top);
+      img{
+        &.bg-sp{
+          width: 100%;
+          height: calc(16 / 375 *100vw);
+        }
+        &.bg-pc, &.bg-tb{
+          display: none;
+        }
+      }
     }
-    transform: translateY(1px);
   }
-  .bg-bottom{
-    margin:0;
-    @media screen and (min-width: $pc-min){
-      height: calc(116 / 2847 *100vw);
-      @include bg-img(about-bg-bottom);
+  .bg-bottom {
+    @include no-margin-padding;
+    @media screen and (min-width: $pc-min) {
+      img {
+        &.bg-pc {
+          width: 100%;
+          height: calc(116 / 2847 * 100vw);
+        }
+
+        &.bg-tb, &.bg-sp {
+          display: none;
+        }
+      }
     }
-    @media screen and (min-width: $tb-min) and (max-width: $tb-max){
-      height: calc(65 / 1601 *100vw);
-      @include bg-img(about-bg-tb-bottom);
+    @media screen and (min-width: $tb-min) and (max-width: $tb-max) {
+      img {
+        &.bg-tb {
+          width: 100%;
+          height: calc(65 / 1601 * 100vw);
+        }
+
+        &.bg-pc, &.bg-sp {
+          display: none;
+        }
+      }
     }
-    @media screen and (max-width: $sp-max){
-      height: calc(16 / 375 *100vw);
-      @include bg-img(about-bg-sp-bottom);
+    @media screen and (max-width: $sp-max) {
+      img {
+        &.bg-sp {
+          width: 100%;
+          height: calc(16 / 375 * 100vw);
+        }
+
+        &.bg-pc, &.bg-tb {
+          display: none;
+        }
+      }
     }
-    transform: translateY(-1px);
   }
-  .wrapper-bg{
+  .sectionInner{
     margin: 0;
     @include resp-padding-top(54px, 48px, 34px);
     @include resp-padding-bottom(44px, 49px, 35px);
+    overflow: hidden;
     background-color: $pink;
     text-align: center;
-    h1{
+
+    h1 {
       margin-top: 0;
       color: white;
     }
-    .table{
+
+    table {
       margin: 0 auto;
       @include resp-max-width(800px, 600px, 275px);
-      .tr{
+      tr {
         @include resp-margin-bottom(24px, 24px, 15px);
         display: flex;
         flex-wrap: nowrap;
         @include resp-height(53px, 53px, 32px);
         border-bottom: 2px white solid;
-        @media screen and (max-width: $sp-max){
-          &:nth-child(4){height: 55px;}
+
+        &:last-child {
+          margin-bottom: 0;
         }
-        &:last-child{margin-bottom: 0;}
-        .th{
-          @include resp-padding-left(25px, 10px, 5px);
+        th {
+          @include resp-margin-left(25px, 10px, 5px);
+          padding: 0;
           @include resp-width(265px, 190px, 115px);
           text-align: start;
           vertical-align: top;
         }
-        .td{
-          padding-left: 0;
+        td {
+          padding: 0;
           @include resp-width(535px, 410px, 160px);
           text-align: start;
           vertical-align: top;
@@ -654,6 +751,7 @@ header{
 }
 
 #contact{
+  overflow: hidden;
   text-align: center;
   p{
     margin-top: 0;
