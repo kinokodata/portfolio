@@ -142,6 +142,10 @@ $sp-max: 599px;
   width: 100%;
   background-color: $bg-color;
 }
+@mixin fluid-keeping-ratio($original-height: 0, $original-width: 0) {
+  width: 100%;
+  height: calc(#{$original-height} / #{$original-width} *100vw);
+}
 @mixin margin-top-bottom($mtb) {
   margin-top: $mtb;
   margin-bottom: $mtb;
@@ -365,77 +369,27 @@ header{
 
 #works{
   .bg-top{
-    @include no-margin-padding;
-    transform: translateY(4px);
-    @media screen and (min-width: $pc-min){
-      img{
-        &.bg-pc{
-          width: 100%;
-          height: calc(118 / 2847 *100vw);
-        }
-        &.bg-tb, &.bg-sp{
-          display: none;
-        }
-      }
-    }
-    @media screen and (min-width: $tb-min) and (max-width: $tb-max){
-      img{
-        &.bg-tb{
-          width: 100%;
-          height: calc(67 / 1601 *100vw);
-        }
-        &.bg-pc, &.bg-sp{
-          display: none;
-        }
-      }
-    }
-    @media screen and (max-width: $sp-max){
-      img{
-        &.bg-sp{
-          width: 100%;
-          height: calc(16 / 375 *100vw);
-        }
-        &.bg-pc, &.bg-tb{
-          display: none;
-        }
-      }
-    }
+    display: flex;
+    transform: translateY(1px);
   }
   .bg-bottom{
-    @include no-margin-padding;
-    @media screen and (min-width: $pc-min){
-      img{
-        &.bg-pc{
-          width: 100%;
-          height: calc(114 / 2847 *100vw);
-        }
-        &.bg-tb, &.bg-sp{
-          display: none;
-        }
-      }
-    }
-    @media screen and (min-width: $tb-min) and (max-width: $tb-max){
-      img{
-        &.bg-tb{
-          width: 100%;
-          height: calc(65 / 1601 *100vw);
-        }
-        &.bg-pc, &.bg-sp{
-          display: none;
-        }
-      }
-    }
-    @media screen and (max-width: $sp-max){
-      img{
-        &.bg-sp{
-          width: 100%;
-          height: calc(17 / 375 *100vw);
-        }
-        &.bg-pc, &.bg-tb{
-          display: none;
-        }
-      }
-    }
+    display: flex;
+    transform: translateY(-1px);
+  }
+  @media screen and (min-width: $pc-min){
+    .bg-top, .bg-top-pc{@include fluid-keeping-ratio(118, 2847);}
+    .bg-bottom, .bg-bottom-pc{@include fluid-keeping-ratio(114, 2847);}
+    .bg-top-tb, .bg-top-sp, .bg-bottom-tb, .bg-bottom-sp{display: none;}
+  }
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){
+    .bg-top, .bg-top-tb{@include fluid-keeping-ratio(67, 1601);}
+    .bg-bottom, .bg-bottom-tb{@include fluid-keeping-ratio(65, 1601);}
+    .bg-top-pc, .bg-top-sp, .bg-bottom-pc, .bg-bottom-sp{display: none;}
+  }
+  @media screen and (max-width: $sp-max){
+    .bg-top, .bg-top-sp{@include fluid-keeping-ratio(16, 375);}
+    .bg-bottom, .bg-bottom-sp{@include fluid-keeping-ratio(15, 375);}
+    .bg-top-pc, .bg-top-tb, .bg-bottom-pc, .bg-bottom-tb{display: none;}
   }
   .sectionInner{
     margin: 0;
@@ -612,80 +566,27 @@ header{
 
 #about{
   .bg-top{
-    @include no-margin-padding;
-    transform: translateY(4px);
-    @media screen and (min-width: $pc-min){
-      img{
-        &.bg-pc{
-          width: 100%;
-          height: calc(97 / 2847 *100vw);
-        }
-        &.bg-tb, &.bg-sp{
-          display: none;
-        }
-      }
-    }
-    @media screen and (min-width: $tb-min) and (max-width: $tb-max){
-      img{
-        &.bg-tb{
-          width: 100%;
-          height: calc(67 / 1601 *100vw);
-        }
-        &.bg-pc, &.bg-sp{
-          display: none;
-        }
-      }
-    }
-    @media screen and (max-width: $sp-max){
-      img{
-        &.bg-sp{
-          width: 100%;
-          height: calc(16 / 375 *100vw);
-        }
-        &.bg-pc, &.bg-tb{
-          display: none;
-        }
-      }
-    }
+    display: flex;
+    transform: translateY(1px);
   }
-  .bg-bottom {
-    @include no-margin-padding;
-    @media screen and (min-width: $pc-min) {
-      img {
-        &.bg-pc {
-          width: 100%;
-          height: calc(116 / 2847 * 100vw);
-        }
-
-        &.bg-tb, &.bg-sp {
-          display: none;
-        }
-      }
-    }
-    @media screen and (min-width: $tb-min) and (max-width: $tb-max) {
-      img {
-        &.bg-tb {
-          width: 100%;
-          height: calc(65 / 1601 * 100vw);
-        }
-
-        &.bg-pc, &.bg-sp {
-          display: none;
-        }
-      }
-    }
-    @media screen and (max-width: $sp-max) {
-      img {
-        &.bg-sp {
-          width: 100%;
-          height: calc(16 / 375 * 100vw);
-        }
-
-        &.bg-pc, &.bg-tb {
-          display: none;
-        }
-      }
-    }
+  .bg-bottom{
+    display: flex;
+    transform: translateY(-1px);
+  }
+  @media screen and (min-width: $pc-min){
+    .bg-top, .bg-top-pc{@include fluid-keeping-ratio(96, 2847);}
+    .bg-bottom, .bg-bottom-pc{@include fluid-keeping-ratio(115, 2847);}
+    .bg-top-tb, .bg-top-sp, .bg-bottom-tb, .bg-bottom-sp{display: none;}
+  }
+  @media screen and (min-width: $tb-min) and (max-width: $tb-max){
+    .bg-top, .bg-top-tb{@include fluid-keeping-ratio(66, 1601);}
+    .bg-bottom, .bg-bottom-tb{@include fluid-keeping-ratio(64, 1601);}
+    .bg-top-pc, .bg-top-sp, .bg-bottom-pc, .bg-bottom-sp{display: none;}
+  }
+  @media screen and (max-width: $sp-max){
+    .bg-top, .bg-top-sp{@include fluid-keeping-ratio(15, 375);}
+    .bg-bottom, .bg-bottom-sp{@include fluid-keeping-ratio(15, 375);}
+    .bg-top-pc, .bg-top-tb, .bg-bottom-pc, .bg-bottom-tb{display: none;}
   }
   .sectionInner{
     margin: 0;
