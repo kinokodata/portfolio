@@ -2079,6 +2079,7 @@ header .fadeIn .greeting p {
   width: 100%;
   border-width: 0;
   background-color: #bd427b;
+  cursor: pointer;
   color: white;
   font-size: 16px;
   text-align: center;
