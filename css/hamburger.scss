@@ -243,6 +243,9 @@ $sp-max: 599px;
 }
 .openbtn1.active{
 /*.activeクラスの前にスペースを入れない*/
+  position: fixed;
+  @include resp-hmbrgr-top(35px, 18px);
+  @include resp-hmbrgr-right(19.6px, 9.8px);
   span:nth-of-type(1) {
     top: 0px;
     right: 0px;
@@ -253,7 +256,6 @@ $sp-max: 599px;
     @media screen and (max-width: $sp-max){
       transform: translateX(calc(15px * (1 - 1 / 1.414))) translateY(calc(15px / 1.414)) rotate(-45deg);
     }
-
   }
   span:nth-of-type(2) {
     opacity: 0;

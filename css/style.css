@@ -307,6 +307,27 @@
 
 .openbtn1.active {
   /*.activeクラスの前にスペースを入れない*/
+  position: fixed;
+}
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .openbtn1.active {
+    top: 35px;
+  }
+}
+@media screen and (max-width: 599px) {
+  .openbtn1.active {
+    top: 18px;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .openbtn1.active {
+    right: 19.6px;
+  }
+}
+@media screen and (max-width: 599px) {
+  .openbtn1.active {
+    right: 9.8px;
+  }
 }
 .openbtn1.active span:nth-of-type(1) {
   top: 0px;
