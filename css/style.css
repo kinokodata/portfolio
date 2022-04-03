@@ -674,7 +674,7 @@ h1, h2, h3, p, a, li, th {
     margin: 40px 0 20px;
   }
 }
-h1, h2, h3, p, li, th, td, button {
+body {
   font-family: "M PLUS Rounded 1c", sans-serif;
 }
 
