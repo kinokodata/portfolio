@@ -278,6 +278,7 @@
   position: absolute;
   right: 0px;
   height: 3px;
+  border-radius: 1.5px;
   background-color: #304a67;
   width: 100%;
 }
