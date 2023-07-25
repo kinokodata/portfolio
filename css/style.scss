@@ -317,6 +317,7 @@ header{
     }
     .greeting{
       margin: 0 auto;
+      margin-top: 50px;
       overflow: hidden;
       @include resp-max-width(1000px, 580px, 300px);
       h1, p{
