@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+  db: # データベース
+    platform: linux/x86_64 # M1 MAC 対応
+    container_name: kinokodata-portfolio-db
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: database
+      MYSQL_USER: username
+      MYSQL_PASSWORD: password
+      MYSQL_TCP_PORT: 13306
+      TZ: "Asia/Tokyo"
+    command: >-
+      mysqld
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
+      --innodb-use-native-aio=0
+      --log_bin_trust_function_creators=1
+      --explicit_defaults_for_timestamp
+    volumes:
+      - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./db/sql:/docker-entrypoint-initdb.d
+      - ./data/mysql:/var/lib/mysql
+    ports:
+      - "13306:3306"
+    expose:
+      - 13306
+
+  wp: # WordPress
+    image: wordpress:php8.2
+    container_name: kinokodata-portfolio-wp
+    volumes:
+      - "./wordpress:/var/www/html"
+    ports:
+      - "18000:80"
+    depends_on:
+      - db
+    environment:
+      WORDPRESS_DB_HOST: db:13306
+      WORDPRESS_DB_USER: username
+      WORDPRESS_DB_PASSWORD: password
+      WORDPRESS_DB_NAME: database

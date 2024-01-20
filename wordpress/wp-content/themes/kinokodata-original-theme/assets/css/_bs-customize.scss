@@ -1,0 +1,25 @@
+$cream: #fffdce;
+$bamboo: #6cc0a2;
+$rose: #e35768;
+$pink: #f3b2c5;
+$indigo: #304a67;
+$magenta: #bd427b;
+
+$font-family-base: "M PLUS Rounded 1c", sans-serif;
+
+$theme-colors: (
+        primary: $indigo,
+        secondary: $magenta,
+);
+
+$theme-colors-bg-subtle: (
+        primary: $cream,
+        secondary: $pink,
+        light: #f8f9fa
+);
+
+$container-max-widths: (
+        xxl: 1200px
+);
+
+@import "./bootstrap/bootstrap.scss";

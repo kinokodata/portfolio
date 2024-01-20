@@ -1,0 +1,21 @@
+@use 'bootstrap/bootstrap' as bs;
+
+.footer-Inner {
+  ul.footer-Nav_Items {
+    list-style: none;
+
+    li a {
+      color: var(--bs-primary);
+      display: inline-block;
+      margin-bottom: 1em;
+      width: 10em;
+      text-decoration: none;
+      border-bottom: 2px var(--bs-primary-bg-subtle) solid;
+
+      &:hover {
+        text-decoration: none;
+        border-bottom: 2px var(--bs-secondary) solid;
+      }
+    }
+  }
+}

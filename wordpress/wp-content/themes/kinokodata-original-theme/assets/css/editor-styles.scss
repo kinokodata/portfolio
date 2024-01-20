@@ -1,0 +1,151 @@
+@use 'bootstrap/bootstrap' as bs;
+
+// WPブロック関連
+.wp-block-categories-list, .wp-block-categories {
+  list-style: none;
+  padding-left: 0;
+}
+
+.wp-block-calendar {
+  a {
+    text-decoration: underline;
+  }
+}
+
+// カラーパレット関連
+.has-primary-background-color {
+  background-color: var(--bs-primary);
+}
+
+.has-secondary-background-color {
+  background-color: var(--bs-secondary);
+}
+
+.has-primary-subtle-background-color {
+  background-color: var(--bs-primary-bg-subtle);
+}
+
+.has-secondary-background-color {
+  background-color: var(--bs-secondary-bg-subtle);
+}
+
+.has-primary-color {
+  color: var(--bs-primary);
+}
+
+.has-secondary-color {
+  color: var(--bs-secondary);
+}
+
+.has-primary-subtle-color {
+  color: var(--bs-primary-bg-subtle);
+}
+
+.has-secondary-color {
+  color: var(--bs-secondary-bg-subtle);
+}
+
+.has-x-large-font-size {
+  @extend .display-1;
+}
+
+.has-large-font-size {
+  @extend .display-3;
+}
+
+.has-h-1-font-size {
+  @extend .fs-1;
+}
+
+.has-h-2-font-size {
+  @extend .fs-2;
+}
+
+.has-h-3-font-size {
+  @extend .fs-3;
+}
+
+.has-h-4-font-size {
+  @extend .fs-4;
+}
+
+.has-h-5-font-size {
+  @extend .fs-5;
+}
+
+.has-normal-font-size {
+  @extend .fs-6;
+}
+
+.has-small-font-size {
+  font-size: 0.8rem;
+}
+
+.has-x-small-font-size {
+  font-size: 0.6rem;
+}
+
+// ボタン
+a.wp-block-button__link {
+  text-decoration: none;
+  transition: opacity 0.15s ease-in-out;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+    opacity: 0.7;
+  }
+}
+
+// テーブル（ストライプ）
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+  background-color: var(--bs-secondary-bg-subtle);
+}
+
+// 見出しのバリエーション
+.is-style-heading-underline {
+  color: var(--bs-primary);
+  width: fit-content !important;
+  padding: 0 1em 0.2em 1em;
+  border-bottom: 5px solid var(--bs-secondary) !important;
+  margin: 0 auto 0.5em 0;
+
+  &.has-text-align-center {
+    margin: 0 auto 0.5em;
+  }
+
+  &.has-text-align-right {
+    margin: 0 0 0.5em auto;
+  }
+}
+
+.is-style-heading-bg-logo {
+  background-color: var(--bs-primary) !important;
+  color: white !important;
+  width: calc(100% - 2em);
+  line-height: 1em;
+  padding: 0.5em 0 0.5em 1em;
+  position: relative;
+  margin-bottom: 0.5em !important;
+
+  &::after {
+    display: inline-block;
+    content: '';
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    top: 0;
+    right: -2em;
+    background-image: url("../images/heading-after.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 10;
+  }
+}
+
+.is-style-heading-border-left {
+  border-left: 10px var(--bs-primary) solid !important;
+  padding-left: 0.5em;
+  color: var(--bs-primary);
+  margin-bottom: 0.5em !important;
+}

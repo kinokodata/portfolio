@@ -1,0 +1,65 @@
+@use 'bootstrap/bootstrap' as bs;
+
+$height-header: 66px;
+$height-breadcrumb: 24px;
+
+.header {
+  height: $height-header;
+
+  .header-Inner {
+    background: var(--bs-primary-bg-subtle);
+  }
+
+  .header-Navbar {
+    .header-Logo {
+      img {
+        height: calc(#{$height-header} - 1em);
+      }
+    }
+    .navbar-toggler {
+      &:focus {
+        box-shadow: none;
+      }
+    }
+    .navbar-nav {
+      list-style: none;
+      display: flex;
+
+      li a {
+        color: var(--bs-primary);
+        padding-left: 2em;
+        text-decoration: none;
+
+        &:hover {
+          color: var(--bs-secondary);
+        }
+      }
+    }
+
+    @include bs.media-breakpoint-down(lg) {
+      .navbar-collapse {
+        text-align: right;
+        padding-bottom: 2.5em;
+        padding-top: 1em;
+        padding-right: 2.5em;
+
+        .navbar-nav li a {
+          line-height: 1.8em;
+        }
+      }
+    }
+  }
+
+  .breadcrumb-Wrapper {
+    height: $height-breadcrumb;
+
+    a {
+      color: var(--bs-primary);
+
+      &:hover {
+        color: var(--bs-secondary);
+        text-decoration: underline;
+      }
+    }
+  }
+}
