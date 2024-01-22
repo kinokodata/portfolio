@@ -8,8 +8,8 @@
 <div class="body-Wrapper --no-breadcrumb">
     <?php get_header(); ?>
     <div class="frontPage-MainVisual w-100">
-        <img class="d-none d-lg-block" src="<?= esc_url(get_template_directory_uri()) ?>/assets/images/pic_hero-landscape.jpg">
-        <img class="d-lg-none" src="<?= esc_url(get_template_directory_uri()) ?>/assets/images/pic_hero-vertical.jpg">
+        <img class="img-fluid d-none d-lg-block" src="<?= esc_url(get_template_directory_uri()) ?>/assets/images/fv-landscape.png">
+        <img class="img-fluid d-lg-none w-100" src="<?= esc_url(get_template_directory_uri()) ?>/assets/images/fv-vertical.png">
     </div>
     <div class="content-Wrapper container my-2 my-lg-5">
         <main class="my-5 bg-white p-5">

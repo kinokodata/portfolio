@@ -49,17 +49,17 @@ $height-breadcrumb: 24px;
       }
     }
   }
+}
 
-  .breadcrumb-Wrapper {
-    height: $height-breadcrumb;
+.breadcrumb-Wrapper {
+  height: $height-breadcrumb;
 
-    a {
-      color: var(--bs-primary);
+  a {
+    color: var(--bs-primary);
 
-      &:hover {
-        color: var(--bs-secondary);
-        text-decoration: underline;
-      }
+    &:hover {
+      color: var(--bs-secondary);
+      text-decoration: underline;
     }
   }
 }

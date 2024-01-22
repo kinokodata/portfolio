@@ -25,13 +25,13 @@
             </div>
         </nav>
     </div>
-    <div class="container-fluid bg-light">
-        <div class="container">
-            <?php if(!is_front_page() && !is_404()) { ?>
-                <div class="row breadcrumb-Wrapper has-small-font-size text-primary">
-                    <?php get_template_part('template-parts/breadcrumb'); ?>
-                </div>
-            <?php } ?>
-        </div>
-    </div>
 </header>
+<div class="container-fluid bg-light">
+    <div class="container">
+        <?php if(!is_front_page() && !is_404()) { ?>
+            <div class="row breadcrumb-Wrapper has-small-font-size text-primary">
+                <?php get_template_part('template-parts/breadcrumb'); ?>
+            </div>
+        <?php } ?>
+    </div>
+</div>

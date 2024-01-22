@@ -1,0 +1,23 @@
+// アイキャッチ
+$eyecatch-height: 300px;
+
+.page-EyeCatch {
+  position: relative;
+  height: $eyecatch-height;
+
+  img {
+    // position: fixed;
+    width: 100%;
+    height: $eyecatch-height;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .page-Title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $eyecatch-height;
+    line-height: $eyecatch-height;
+  }
+}

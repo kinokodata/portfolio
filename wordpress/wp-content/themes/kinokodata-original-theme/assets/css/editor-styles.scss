@@ -1,5 +1,9 @@
 @use 'bootstrap/bootstrap' as bs;
 
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5em !important;
+}
+
 // WPブロック関連
 .wp-block-categories-list, .wp-block-categories {
   list-style: none;
